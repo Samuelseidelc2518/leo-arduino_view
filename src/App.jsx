@@ -1,4 +1,3 @@
-// import { createSignal, For, createEffect, onMount } from "solid-js";
 import styles from "./App.module.css";
 import Coils from "./sections/Coils";
 import Injectors from "./sections/Injectors";
@@ -14,9 +13,8 @@ function App() {
     Array.from({ length: 45 }, (x, ind) => {
       if (ind < 23 || ind > 26) {
         return 0;
-      } else {
-        return "0";
       }
+      return 2.7;
     })
   );
 
@@ -37,9 +35,9 @@ function App() {
   });
 
   onMount(() => {
-    socket.on("message", (data) => {
-      console.log(data);
-      setData(data);
+    socket.on("arduino", (data) => {
+      console.log(data.split(","));
+      setData(data.split(","));
     });
   });
 
@@ -48,7 +46,7 @@ function App() {
       <Injectors data={injectors} />
       <Coils data={coils} />
       <PanelLogo />
-      <PanelControls />
+      <PanelControls data={controls} />
       <Potentiometers data={potentiometers} />
     </div>
   );

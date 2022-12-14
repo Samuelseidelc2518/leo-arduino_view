@@ -336,6 +336,10 @@ body {
   transition: all 0.45s ease-in-out;
 }
 
+.control__item__icon path{
+  fill: #004444;
+}
+
 @media only screen and (min-width: 1440px) {
   .control__item__icon {
     scale: unset;
@@ -356,6 +360,10 @@ body {
 
 .control__iac__icon--active>svg {
   filter: unset;
+}
+
+.control__iac__icon--active path{
+  fill: #00FFFF;
 }
 
 .control__iac__icon-1 {

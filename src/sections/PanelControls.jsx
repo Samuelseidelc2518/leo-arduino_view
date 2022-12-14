@@ -1,6 +1,6 @@
 import styles from "../App.module.css";
 
-const PanelControls = () => {
+const PanelControls = ({ data }) => {
   return (
     <div class={styles["panel__controls"]}>
       <div class={styles["control-master"]}></div>
@@ -28,7 +28,9 @@ const PanelControls = () => {
           />
         </svg>
       </div>
-      <div class={styles.control}>
+
+      
+      <div class={`${styles.control} ${data()[0] == "0" && `${styles["control--active"]}`}`}>
         <svg
           width="73"
           height="51"
@@ -85,7 +87,7 @@ const PanelControls = () => {
           </defs>
         </svg>
       </div>
-      <div class={styles.control}>
+      <div class={`${styles.control} ${data()[1] == "0" && `${styles["control--active"]}`}`}>
         <svg
           width="54"
           height="58"
@@ -142,7 +144,7 @@ const PanelControls = () => {
           </defs>
         </svg>
       </div>
-      <div class={`${styles.control} ${styles["control--active"]}`}>
+      <div class={`${styles.control} ${data()[2] == "0" && `${styles["control--active"]}`}`}>
         <svg
           width="55"
           height="52"
@@ -211,7 +213,7 @@ const PanelControls = () => {
           </defs>
         </svg>
       </div>
-      <div class={styles.control}>
+      <div class={`${styles.control} ${data()[3] == "0" && `${styles["control--active"]}`}`}>
         <svg
           width="66"
           height="57"
@@ -321,7 +323,7 @@ const PanelControls = () => {
           </defs>
         </svg>
       </div>
-      <div class={styles.control}>
+      <div class={`${styles.control} ${data()[4] == "0" && `${styles["control--active"]}`}`}>
         <svg
           width="54"
           height="42"
@@ -389,7 +391,7 @@ const PanelControls = () => {
           <div
             // insert logic of on
             class={`${styles.control__item__icon} ${
-              false &&
+              data()[5] == "0" &&
               `${styles["control__iac__icon--active"]} ${styles.rotating}`
             }`}
           >
@@ -471,7 +473,7 @@ const PanelControls = () => {
           <div
             // insert logic of on
             class={`${styles.control__item__icon} ${
-              false &&
+              data()[6] == "0" &&
               `${styles["control__iac__icon--active"]} ${styles.rotating}`
             }`}
           >

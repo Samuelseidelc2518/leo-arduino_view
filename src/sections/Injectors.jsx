@@ -10,7 +10,7 @@ const Injectors = ({ data }) => {
           {(el) => (
             <div
               class={`${styles.injector} ${
-                el == 1 ? styles["injector--active"] : ""
+                el == "0" ? styles["injector--active"] : ""
               }`}
             >
               <div class={styles.injector__icon}>

@@ -32,22 +32,22 @@ const Potentiometers = ({ data }) => {
         <div class={styles.potentiometer}>
           <div class={styles.potentiometer__title}>GND</div>
           <div class={styles.potentiometer__dots}>
-            <div class={`${styles.dot} ${styles["dot--active"]}`}></div>
-            <div class={`${styles.dot} ${styles["dot--active"]}`}></div>
-            <div class={styles.dot}></div>
-            <div class={styles.dot}></div>
-            <div class={styles.dot}></div>
+            <div class={`${styles.dot} ${data()[4] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[5] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[6] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[7] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[8] == "1" && `${styles["dot--active"]}`}`}></div>
           </div>
         </div>
 
         <div class={styles.potentiometer}>
           <div class={styles.potentiometer__title}>GND</div>
           <div class={styles.potentiometer__dots}>
-            <div class={`${styles.dot} ${styles["dot--active"]}`}></div>
-            <div class={`${styles.dot} ${styles["dot--active"]}`}></div>
-            <div class={styles.dot}></div>
-            <div class={styles.dot}></div>
-            <div class={styles.dot}></div>
+            <div class={`${styles.dot} ${data()[9] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[10] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[11] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[12] == "1" && `${styles["dot--active"]}`}`}></div>
+            <div class={`${styles.dot} ${data()[13] == "1" && `${styles["dot--active"]}`}`}></div>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ const Potentiometers = ({ data }) => {
         <div class={styles.control__item__icon}>
           <div class={styles.control__iac}>
             <div
-              class={`${styles.control__iac__icon} ${styles["control__iac__icon-1"]} ${styles["control__iac__icon--active"]}`}
+              class={`${styles.control__iac__icon} ${styles["control__iac__icon-1"]} ${data()[14] == "1" && `${styles["control__iac__icon--active"]}`}`}
             >
               <svg
                 width="39"
@@ -78,7 +78,7 @@ const Potentiometers = ({ data }) => {
               </svg>
             </div>
             <div
-              class={`${styles.control__iac__icon} ${styles["control__iac__icon-2"]} ${styles["control__iac__icon--active"]}`}
+              class={`${styles.control__iac__icon} ${styles["control__iac__icon-2"]} ${data()[15] == "1" && `${styles["control__iac__icon--active"]}`}`}
             >
               <svg
                 width="39"
@@ -98,7 +98,7 @@ const Potentiometers = ({ data }) => {
               </svg>
             </div>
             <div
-              class={`${styles.control__iac__icon} ${styles["control__iac__icon-3"]}`}
+              class={`${styles.control__iac__icon} ${styles["control__iac__icon-3"]} ${data()[16] == "1" && `${styles["control__iac__icon--active"]}`}`}
             >
               <svg
                 width="39"
@@ -118,7 +118,7 @@ const Potentiometers = ({ data }) => {
               </svg>
             </div>
             <div
-              class={`${styles.control__iac__icon} ${styles["control__iac__icon-4"]}`}
+              class={`${styles.control__iac__icon} ${styles["control__iac__icon-4"]} ${data()[17] == "1" && `${styles["control__iac__icon--active"]}`}`}
             >
               <svg
                 width="39"

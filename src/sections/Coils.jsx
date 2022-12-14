@@ -7,7 +7,7 @@ const Coils = ({ data }) => {
         {/* coil--active */}
         {data().map((el) => (
           // here replace "false" with the condition to turn on the light
-          <div class={`${styles.coil} ${el && styles["coil--active"]}`}>
+          <div class={`${styles.coil} ${el == "0" && styles["coil--active"]}`}>
             <div class={styles.coil__icon}>
               <svg
                 width="98"
