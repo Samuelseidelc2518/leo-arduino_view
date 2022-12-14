@@ -1,0 +1,621 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap");
+
+body {
+  font-family: "Fredoka", sans-serif;
+  background-image: url("http://localhost:3000/assets/background.png");
+  background-color: #000;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+  margin: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    height: 100vh;
+  }
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 48% 22% calc(25.5% - 2rem);
+  grid-template-rows: 1fr 45% 6rem;
+  gap: 1rem;
+  grid-template-areas: "injectors controls potentiometers""coils controls potentiometers""logo controls potentiometers";
+  height: 100vh;
+}
+
+@media only screen and (min-width: 1600px) {
+  .panel {
+    grid-template-columns: 48% 22% calc(26% - 2rem);
+    grid-template-rows: 1fr 38% 11rem;
+  }
+}
+
+.panel__name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #00ffff;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1600px) {
+  .panel__name {
+    font-size: 22px;
+  }
+}
+
+.panel__injectors,
+.panel__coils {
+  display: flex;
+  align-items: center;
+  gap: 0 2rem;
+  padding-left: 6rem;
+}
+
+@media only screen and (min-width: 1600px) {
+
+  .panel__injectors,
+  .panel__coils {
+    padding-left: 7.5rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+
+  .panel__injectors,
+  .panel__coils {
+    padding-left: 12.5rem;
+    gap: 0 4rem;
+  }
+}
+
+.panel__injectors {
+  padding-top: 4rem;
+  grid-area: injectors;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .panel__injectors {
+    padding-top: 7.5rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .panel__injectors {
+    padding-top: 2.5rem;
+  }
+}
+
+.panel__coils {
+  padding-top: 1.5rem;
+  grid-area: coils;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .panel__coils {
+    padding-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .panel__coils {
+    padding-top: 2.5rem;
+  }
+}
+
+.panel__logo {
+  padding-top: 0rem;
+  padding-left: 6rem;
+  grid-area: logo;
+  padding-bottom: 1.5625rem;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .panel__logo {
+    padding-top: 2.5625rem;
+  }
+}
+
+.panel__logo svg {
+  width: 440px;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .panel__logo svg {
+    width: 480px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .panel__logo svg {
+    width: unset;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .panel__logo {
+    padding-left: 7.5rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .panel__logo {
+    padding-left: 8.5rem;
+  }
+}
+
+.panel__controls {
+  padding: 3.1875rem 0;
+  grid-area: controls;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .panel__controls {
+    padding: 7.1875rem 0;
+  }
+}
+
+.panel__potentiometers {
+  grid-area: potentiometers;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .panel__potentiometers {
+    padding: 7.1875rem 0;
+  }
+}
+
+.injectors,
+.coils {
+  display: inline-flex;
+}
+
+@media only screen and (min-width: 1600px) {
+
+  .injectors,
+  .coils {
+    gap: 0.45rem;
+  }
+}
+
+.coils {
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 1600px) {
+  .coils {
+    gap: 1.5rem;
+  }
+}
+
+.injector,
+.coil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scale: 0.75;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1600px) {
+
+  .injector,
+  .coil {
+    scale: unset;
+  }
+}
+
+.injector__icon,
+.coil__icon {
+  width: 2rem;
+  margin-left: -3.65rem;
+}
+
+.injector__led>svg,
+.coil__led>svg {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(224deg) brightness(106%) contrast(101%);
+  transition: all 0.45s ease-in-out;
+}
+
+.injector--active .injector__icon>svg,
+.injector--active .injector__led>svg,
+.injector--active .coil__icon>svg,
+.injector--active .coil__led>svg,
+.coil--active .injector__icon>svg,
+.coil--active .injector__led>svg,
+.coil--active .coil__icon>svg,
+.coil--active .coil__led>svg {
+  filter: unset;
+}
+
+.injector--active .injector__led>svg,
+.injector--active .coil__led>svg,
+.coil--active .injector__led>svg,
+.coil--active .coil__led>svg {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+.coil__icon {
+  margin-left: -4rem;
+}
+
+.control {
+  text-align: center;
+  transition: all 0.45s ease-in-out;
+}
+
+.control:first-child {
+  cursor: pointer;
+}
+
+.control:first-child:hover {
+  scale: 1.1;
+}
+
+.control>svg {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(224deg) brightness(106%) contrast(101%);
+  scale: 0.75;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .control>svg {
+    scale: unset;
+  }
+}
+
+.control--active>svg {
+  filter: unset;
+}
+
+.control-master {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .control-master {
+    gap: 1.25rem;
+  }
+}
+
+.control-aditional {
+  display: flex;
+  padding-top: 1rem;
+  gap: 1.75rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .control-aditional {
+    padding-top: 1.625rem;
+    gap: 3.125rem;
+  }
+}
+
+.control__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .control__item {
+    gap: 1.5rem;
+  }
+}
+
+.control__item__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: #00ffff;
+  text-shadow: 0px 2px 4px #00d5ff;
+}
+
+.control__item__icon {
+  scale: 0.85;
+  transition: all 0.45s ease-in-out;
+}
+
+@media only screen and (min-width: 1440px) {
+  .control__item__icon {
+    scale: unset;
+  }
+}
+
+.control__iac {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "control-1 control-1 control-1""control-2 free control-3""control-4 control-4 control-4";
+}
+
+.control__iac__icon>svg {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(224deg) brightness(106%) contrast(101%);
+  transition: all 0.45s ease-in-out;
+}
+
+.control__iac__icon--active>svg {
+  filter: unset;
+}
+
+.control__iac__icon-1 {
+  grid-area: control-1;
+  justify-self: center;
+}
+
+.control__iac__icon-2 {
+  grid-area: control-2;
+}
+
+.control__iac__icon-3 {
+  grid-area: control-3;
+}
+
+.control__iac__icon-4 {
+  grid-area: control-4;
+  justify-self: center;
+}
+
+.potentiometers {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  margin-bottom: 1rem;
+}
+
+.potentiometers-gnd {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.potentiometer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.potentiometer__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: #00ffff;
+  text-shadow: 0px 2px 4px #00d5ff;
+}
+
+.potentiometer__bar {
+  border: 2px solid #00ffff;
+  filter: drop-shadow(0px 1px 2px #00ffff);
+  border-radius: 10px;
+  width: 116px;
+  overflow: hidden;
+}
+
+.potentiometer__bar>.bar {
+  height: 28px;
+  background-color: #00ffff;
+  transition: all 0.45s ease-in-out;
+}
+
+.potentiometer__dots {
+  border: 2px solid #00ffff;
+  filter: drop-shadow(0px 1px 2px #00ffff);
+  border-radius: 10px;
+  width: 140px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.potentiometer__dots>.dot {
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: all 0.45s ease-in-out;
+}
+
+.potentiometer__dots>.dot:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.potentiometer__dots>.dot--active {
+  background-color: #00ffff;
+}
+
+.turning-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid #00ffff;
+  width: 60%;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  transition: all 0.45s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .turning-box {
+    margin-top: 12rem;
+  }
+}
+
+.turning-box__text {
+  font-size: 2.2rem;
+}
+
+/**
+ * ----------------------------------------
+ * animation rotating
+ * ----------------------------------------
+ */
+@-webkit-keyframes rotating
+
+/* Safari and Chrome */
+  {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 4s linear infinite;
+  animation: rotating 4s linear infinite;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-11-27 20:36:10
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+@-webkit-keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+
+.App {
+  background-color: #ddd;
+  width: 100%;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(6, calc(100%/6));
+  grid-template-rows: repeat(3, calc(100%/3));
+}
+
+.grid_element {
+  width: 90%;
+  height: 90%;
+  background-color: #248;
+  border-radius: 48%;
+  margin: auto;
+}
+
+.grid_element_on {
+  width: 90%;
+  height: 90%;
+  background-color: greenyellow;
+  border-radius: 48%;
+  margin: auto;
+}
+
+.grid_element_2 {
+  width: 100%;
+  height: 100%;
+  background-color: #0004;
+  border-radius: 10%;
+}
